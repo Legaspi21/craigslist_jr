@@ -1,8 +1,8 @@
 <h1> <strong><%= @article.name %></strong>	 - $<%= @article.price %></h1><br><br>
 <%= @article.body %>
 <br><br>
-<%= link_to 'Edit', edit_category_article_path(@article) %> |
-<%= link_to 'Delete', category_article_path(@article),
+<%= link_to 'Edit', edit_category_article_path(@category, @article) %> |
+<%= link_to 'Delete', category_article_path(@category, @article),
 method: :delete,
 data: { confirm: 'Are you sure?' } %>
 <br><br>

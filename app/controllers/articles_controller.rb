@@ -10,6 +10,7 @@ class ArticlesController < ApplicationController
 	end
 	
   def new
+    @category = Category.find(params[:category_id])
   	@article = Article.new
   end
 
@@ -32,6 +33,15 @@ class ArticlesController < ApplicationController
   end
 
   def edit
+    @category = Category.find(params[:category_id])
+    @article = Article.find(params[:id])
+  end
+
+  def update
+    @category= Category.find(params[:category_id])
+    @article = @category.articles.find(params[:id])
+    @article.update(article_params)
+    redirect_to category_path(@category)
   end
  
 private
