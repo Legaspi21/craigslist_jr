@@ -1,24 +1,17 @@
-# README
+# Craigslist Jr
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a very simple rendition of Craigslist I built to practice Ruby on Rails.
 
-Things you may want to cover:
+Things I learned/experimented with:
 
-* Ruby version
+* How to set up Postgresql as the DB on app creation
 
-* System dependencies
+* Nested resources
 
 * Configuration
 
-* Database creation
+* User authentication with Devise
+
+* User permissions
 
 * Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
