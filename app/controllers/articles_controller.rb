@@ -1,4 +1,5 @@
 class ArticlesController < ApplicationController
+  before_action :authenticate_user!, except: [:index, :show]
   def index
   	@category = Category.find(params[:category_id])
   	@articles = @category.articles
@@ -11,13 +12,13 @@ class ArticlesController < ApplicationController
 	
   def new
     @category = Category.find(params[:category_id])
-  	@article = Article.new
+  	@article = current_user.articles.build
   end
 
   def create
     @category = Category.find(params[:category_id])
-  	@article = @category.articles.new(article_params)
- 
+  	@article = current_user.articles.build(article_params)
+    @article.category_id = @category.id
 	  if @article.save
 	    redirect_to category_path(@category)
 	  else
@@ -46,6 +47,6 @@ class ArticlesController < ApplicationController
  
 private
   def article_params
-    params.require(:article).permit(:name, :body, :price)
+    params.require(:article).permit(:name, :body, :price, :category_id)
   end
 end

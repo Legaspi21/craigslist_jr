@@ -8,10 +8,14 @@
 	<li> 
 
 	<%= link_to article.name, category_article_path(@category, article) %> - $<%= article.price %>
+	
+	<% if article.user == current_user %>
   <%= link_to 'Edit', edit_category_article_path(@category, article) %> |
   <%= link_to 'Delete', category_article_path(@category, article),
               method: :delete,
               data: { confirm: 'Are you sure?' } %>
+
+  <% end %>
 	</li>
 <% end %>
 <% end %>

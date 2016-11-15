@@ -14,7 +14,7 @@ end
 20.times do
 	current_id = 1
 	20.times do
-		Article.create(name:Faker::Commerce.product_name,body:Faker::Hipster.paragraph(12, true, 4), price:Faker::Commerce.price, category_id:current_id)
+		Article.create(name:Faker::Commerce.product_name,body:Faker::Hipster.paragraph(12, true, 4), price:Faker::Commerce.price, category_id:current_id, user_id: 1)
 		current_id += 1
 		p current_id
 	end
