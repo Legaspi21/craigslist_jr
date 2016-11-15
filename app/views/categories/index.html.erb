@@ -1,0 +1,10 @@
+<h1>Craiglist Jr.</h1>
+<% if @categories %>
+<div>
+	<ul>
+		<% @categories.each do |category| %>
+		<li> <%= link_to category.title, category_path(category) %></li>
+		<% end %>
+		<% end %>
+	</ul>
+</div>
